@@ -61,4 +61,24 @@ router.get('/schedules', function(req, res) {
         }
     });
 });
+
+router.get('/statistics', function(req, res) {
+    var args = {
+        data: req.query
+    };
+    db.statistics.search(args, function(err, data, count) {
+        if (!err && data) {
+            res.json({
+                "total": count,
+                "rows": data
+            });
+        }
+        else {
+            res.json({
+                "total": 0,
+                "rows": []
+            });
+        }
+    });
+});
 module.exports = router;

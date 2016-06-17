@@ -75,7 +75,8 @@ define([
             this.$Tree.tree({
                 data: [{
                     text: i18n.t('admin.management'),
-                    children: [{
+                    children: [
+                        {
                         id: 'users',
                         text: i18n.t('admin.users.title')
                     }, {
@@ -85,7 +86,16 @@ define([
                         id: 'schedules',
                         text: i18n.t('admin.schedules.title')
                     }]
-                }, {
+                },
+                {
+                     text: i18n.t('admin.statistic'),
+                     children: [
+                         {
+                        id: 'statistics',
+                        text: i18n.t('admin.statistics.title')
+                         }]
+                },
+                {
                     text: i18n.t('admin.help'),
                     children: [{
                         id: 'about',
